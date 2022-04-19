@@ -1,0 +1,272 @@
+/* Attempt 2 */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,500;1,300;1,400&display=swap');
+
+:root {
+    --main-color: #d3ad7f;
+    --bg-color: #010103;
+    --black: #13131a;
+    --check-color: #8ddf8d;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    transition: .2s linear;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    font-size: inherit;
+}
+
+.inputText[type="text"] {
+    font-size: inherit;
+}
+
+.container {
+    background-image: linear-gradient(to right, var(--main-color), var(--black));
+    box-shadow: 4px 3px 7px 2px rgb(255, 255, 255, 0.2);
+    width: 100%;
+    height: auto;
+    min-height: 95vh;
+    min-width: 230px;
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    color: var(--black);
+}
+
+header h1 span {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+
+.addNewTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+  }
+  
+
+#addNewTask {
+    display: block;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--white-color);
+    padding: 5px 10px;
+    color: (var(--bg-color));
+    width: 90%;
+}
+
+#addNewTask::placeholder {
+    color: #010103a2; ;
+} 
+
+#addNewTask:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+  
+.btnAddTask {
+    background-color: transparent;
+    border: none;
+    padding: 4px 10px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* OL */
+#notCompleted, #completed, #deleted {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 0;
+    list-style: none;
+}
+
+#notCompleted h3, #completed h3, #deleted h3 {
+    font-weight: normal;
+    color: var(--black);
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.counter {
+    color: var(--white-color);
+    margin: 0 10px;
+    font-size: 15px;
+    background: #000;
+    padding: 5px 10px;
+    border-radius: 50%;
+    
+}
+
+#notCompleted li, #completed li, #deleted li {
+    width: 100%;
+    height: auto;
+    min-width: 250px;
+    max-width: 500px;
+    min-height: 50px;
+    padding: 8px;
+    padding-left: 15px;
+    font-size: 13px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+    color: var(--white-color);
+    line-height: 35px;
+}
+
+.inputText {
+    font-size: 13px;
+    font-weight: 400;
+    background-color: var(--bg-color);
+    cursor: pointer;
+    color: var(--white-color);
+    border: none;
+    outline: none;
+    margin: 10px;
+    width: 70%;
+}
+
+
+.btn {
+    width: 10%;
+}
+
+.btnCheck, .btnDelete, .btnReturn, .btnEdit {
+    border: 1px solid var(--black);
+    background-color: var(--main-color);
+    color: var(--black);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    transition: 0.3s linear;
+    float: right;
+    margin: 5px;
+}
+
+.btnCheck {
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    float: left;
+}
+
+.btnCheck:hover{
+    background-color: var(--check-color)!important;
+    border: 2px solid var(--check-color)!important;
+}
+
+li div button:hover {
+    border: 1px solid var(--main-color);
+    background-color: var(--black);
+    color: var(--main-color);
+}
+
+i {
+    font-size: 5px 15px;
+    text-align: center;
+    
+}
+
+@media (max-width: 320px) {
+    .btnEdit, .btnReturn, .btnDelete, .btnCheck {
+        width: 20px;
+        height: 20px;
+    }
+
+    .inputText {
+        width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        width: 100%;
+    }
+
+    container {
+        width: 90%;
+    }    
+
+    h1, span {
+      font-size: 13px;
+      display: block;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header h1 span {
+        font-size: 2rem;
+    }
+
+    #addNewTask {
+        width: 100%;
+    }
+    
+    .btnAddTask {
+        margin-top: 15px;
+    }
+
+    .addNewTask {
+        display: block;
+    }
+
+    .inputText {
+        width: 50%;
+    }
+
+    .btnEdit, .btnReturn, .btnDelete, .btnCheck {
+        width: 23px;
+        height: 23px;
+    }
+
+    #notCompleted, #completed, #deleted {
+        margin: 50px 0;
+    }
+}
+  
+
+@media only screen and (max-width: 500px) {
+    body {
+      min-height: 70vh;
+    }
+
+    .inputText {
+        width: 50%;
+    }
+}
